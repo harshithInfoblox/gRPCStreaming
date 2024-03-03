@@ -1,0 +1,12 @@
+syntax = "proto3";
+option go_package="./";
+
+package proto;
+
+service BidirectionalService {
+    rpc Chat(stream Message) returns (stream Message);
+}
+
+message Message {
+    string text = 1;
+}
