@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = './';
+package myservice;
+
+service MyService {
+    rpc UploadData(stream Data) returns (Response);
+}
+
+message Data {
+    string payload = 1;
+}
+
+message Response {
+    string message = 1;
+}
